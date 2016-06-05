@@ -9,13 +9,27 @@
 
         <div id="validate-test">
             <input id="validate-1" type="text" disabled><br>
-            <fieldset id="validate-2" class="checkboxes" class="required" type="text">
+            <label for="validate-1"></label>
+            <fieldset id="validate-2" class="checkboxes required">
                 <input type="checkbox">
             </fieldset><br>
-            <fieldset id="validate-3" class="checkboxes" class="required" type="text">
+            <fieldset id="validate-3" class="checkboxes" required>
                 <input type="checkbox" checked>
             </fieldset><br>
+
+            <input id="validate-4" class="validate-numeric" type="text" value="12345"><br>
+            <label id="validate-4-lbl"></label>
+
+            <input id="validate-5" class="validate-numeric" type="text" value="notanumber"><br>
+            <label id="validate-5-label"></label>
+
+            <input id="validate-6" type="text"><br>
         </div>
-        <input id="button" class="validate" type="submit" value="Submit"><br>
+
+        <div id="isvalid-test">
+            <input id="isvalid-1" class="validate-numeric" type="text" value="notanumber">
+            <input id="isvalid-2" class="novalidate" type="text" value="test123">
+            <input id="button" class="validate" type="submit" value="Submit"><br>
+        </div>
     </form>
 </div>
