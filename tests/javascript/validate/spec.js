@@ -47,93 +47,93 @@ define(['jquery', 'testsRoot/validate/spec-setup', 'jasmineJquery'], function ($
     });
 
     
-    describe('validate method on #validate-1', function () {
-        var res = document.formvalidator.validate(element.find('#validate-1'))
+    describe('validate method on #validate-disabled', function () {
+        var res = document.formvalidator.validate(element.find('#validate-disabled'))
 
         it('should return true', function () {
             expect(res).toEqual(true);
         });
         it('should remove class invalid from element', function () {
-            expect(element.find('#validate-1')).not.toHaveClass('invalid');
+            expect(element.find('#validate-disabled')).not.toHaveClass('invalid');
         });
         it('should have aria-invalid = false in element', function () {
-            expect(element.find('#validate-1')).toHaveAttr('aria-invalid', 'false');
+            expect(element.find('#validate-disabled')).toHaveAttr('aria-invalid', 'false');
         });
         it('should remove class invalid from the label for element', function () {
-            expect(element.find('#validate-test label[for=validate-1]')).not.toHaveClass('invalid');
+            expect(element.find('#validate-test label[for=validate-disabled]')).not.toHaveClass('invalid');
         });
     });
 
-    describe('validate method on #validate-2', function () {
-        var res = document.formvalidator.validate(element.find('#validate-2'));
+    describe('validate method on #validate-required-unchecked', function () {
+        var res = document.formvalidator.validate(element.find('#validate-required-unchecked'));
 
         it('should return false', function () {
             expect(res).toEqual(false);
         });
         it('should add class invalid to element', function () {
-            expect(element.find('#validate-2')).toHaveClass('invalid');
+            expect(element.find('#validate-required-unchecked')).toHaveClass('invalid');
         });
         it('should have aria-invalid = true in element', function () {
-            expect(element.find('#validate-2')).toHaveAttr('aria-invalid', 'true');
+            expect(element.find('#validate-required-unchecked')).toHaveAttr('aria-invalid', 'true');
         });
     });
 
-    describe('validate method on #validate-3', function () {
-        var res = document.formvalidator.validate(element.find('#validate-3'));
+    describe('validate method on #validate-required-checked', function () {
+        var res = document.formvalidator.validate(element.find('#validate-required-checked'));
 
         it('should return true', function () {
             expect(res).toEqual(true);
         });
     });
 
-    describe('validate method on #validate-4', function () {
-        var res = document.formvalidator.validate(element.find('#validate-4'));
+    describe('validate method on #validate-numeric-number', function () {
+        var res = document.formvalidator.validate(element.find('#validate-numeric-number'));
 
         it('should return true', function () {
             expect(res).toEqual(true);
         });
         it('should remove class invalid from element', function () {
-            expect(element.find('#validate-4')).not.toHaveClass('invalid');
+            expect(element.find('#validate-numeric-number')).not.toHaveClass('invalid');
         });
         it('should have aria-invalid = false in element', function () {
-            expect(element.find('#validate-4')).toHaveAttr('aria-invalid', 'false');
+            expect(element.find('#validate-numeric-number')).toHaveAttr('aria-invalid', 'false');
         });
         it('should remove class invalid from the label for element', function () {
-            expect(element.find('#validate-4-lbl')).not.toHaveClass('invalid');
+            expect(element.find('#validate-numeric-number-lbl')).not.toHaveClass('invalid');
         });
     });
 
-    describe('validate method on #validate-5', function () {
-        var $label = element.find('#validate-5-label');
-        element.find('#validate-5').data('label', $label);
+    describe('validate method on #validate-numeric-nan', function () {
+        var $label = element.find('#validate-numeric-nan-label');
+        element.find('#validate-numeric-nan').data('label', $label);
 
-        var res = document.formvalidator.validate(element.find('#validate-5'));
+        var res = document.formvalidator.validate(element.find('#validate-numeric-nan'));
 
         it('should return false', function () {
             expect(res).toEqual(false);
         });
         it('should add class invalid to element', function () {
-            expect(element.find('#validate-5')).toHaveClass('invalid');
+            expect(element.find('#validate-numeric-nan')).toHaveClass('invalid');
         });
         it('should have aria-invalid = true in element', function () {
-            expect(element.find('#validate-5')).toHaveAttr('aria-invalid', 'true');
+            expect(element.find('#validate-numeric-nan')).toHaveAttr('aria-invalid', 'true');
         });
         it('should add class invalid to the label for element', function () {
-            expect(element.find('#validate-5-label')).toHaveClass('invalid');
+            expect(element.find('#validate-numeric-nan-label')).toHaveClass('invalid');
         });
     });
 
-    describe('validate method on #validate-6', function () {
-        var res = document.formvalidator.validate(element.find('#validate-6'));
+    describe('validate method on #validate-no-options', function () {
+        var res = document.formvalidator.validate(element.find('#validate-no-options'));
 
         it('should return true', function () {
             expect(res).toEqual(true);
         });
         it('should remove class invalid from element', function () {
-            expect(element.find('#validate-6')).not.toHaveClass('invalid');
+            expect(element.find('#validate-no-options')).not.toHaveClass('invalid');
         });
         it('should have aria-invalid = false in element', function () {
-            expect(element.find('#validate-6')).toHaveAttr('aria-invalid', 'false');
+            expect(element.find('#validate-no-options')).toHaveAttr('aria-invalid', 'false');
         });
     });
 
@@ -143,14 +143,20 @@ define(['jquery', 'testsRoot/validate/spec-setup', 'jasmineJquery'], function ($
         };
         $('#button').trigger( "click" );
 
-        it('should add class invalid to element #isvalid-1', function () {
-            expect(element.find('#isvalid-1')).toHaveClass('invalid');
+        it('should add class invalid to element #isvalid-numeric-nan', function () {
+            expect(element.find('#isvalid-numeric-nan')).toHaveClass('invalid');
         });
-        it('should have aria-invalid = true in element #isvalid-1', function () {
-            expect(element.find('#isvalid-1')).toHaveAttr('aria-invalid', 'true');
+        it('should have aria-invalid = true in element #isvalid-numeric-nan', function () {
+            expect(element.find('#isvalid-numeric-nan')).toHaveAttr('aria-invalid', 'true');
         });
-        it('should not add class invalid to element #isvalid-2', function () {
-            expect(element.find('#isvalid-2')).not.toHaveClass('invalid');
+        it('should not add class invalid to element #isvalid-novalidate', function () {
+            expect(element.find('#isvalid-novalidate')).not.toHaveClass('invalid');
+        });
+        it('should remove class invalid from element #isvalid-numeric-nan after correcting value', function () {
+            $('#isvalid-numeric-nan').val('12345');
+            $('#button').trigger( "click" );
+
+            expect(element.find('#isvalid-numeric-nan')).not.toHaveClass('invalid');
         });
     });
 });
