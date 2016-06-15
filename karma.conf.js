@@ -8,7 +8,7 @@ module.exports = function (config) {
 
 		// frameworks to use
 		// available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-		frameworks: ['jasmine', 'requirejs'],
+		frameworks: ['jasmine-ajax', 'jasmine', 'requirejs'],
 
 		// list of files / patterns to load in the browser
 		files: [
@@ -56,7 +56,7 @@ module.exports = function (config) {
 		logLevel: config.LOG_INFO,
 
 		// enable / disable watching file and executing tests whenever any file changes
-		autoWatch: false,
+		autoWatch: true,
 
 		// start these browsers
 		// available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
@@ -64,11 +64,12 @@ module.exports = function (config) {
 
 		// Continuous Integration mode
 		// if true, Karma captures browsers, runs the tests and exits
-		singleRun: true,
+		singleRun: false,
 
 		// list of plugins
 		plugins: [
 			'karma-jasmine',
+			'karma-jasmine-ajax',
 			'karma-firefox-launcher',
 			'karma-coverage',
 			'karma-requirejs',
