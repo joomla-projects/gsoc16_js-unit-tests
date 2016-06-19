@@ -8,25 +8,25 @@
  */
 
 define(['jquery', 'text!testsRoot/permissions/fixtures/fixture.html', 'libs/permissions', 'libs/core', 'jasmineJquery'], function ($, fixture) {
-    $('body').append(fixture);
+	$('body').append(fixture);
 
-    window.id = '0';
-    window.value = '1';
+	window.id = '0';
+	window.value = '1';
 
-    event = {target: '#sendBtn'};
+	event = {target: '#sendBtn'};
 
-    responses = {
-        success: {
-            status: 200,
-            statusText: 'HTTP/1.1 200 OK',
-            contentType: 'text/plain',
-            responseText: '{"data": "true", "message": "0"}'
-        },
-        fail: {
-            status: 404,
-            statusText: 'HTTP/1.1 404 Not Found',
-            contentType: 'text/plain',
-            responseText: ''
-        }
-    };
+	responses = {
+		success: {
+			status: 200,
+			statusText: 'HTTP/1.1 200 OK',
+			contentType: 'text/plain',
+			responseText: '{"data": "true", "message": "0"}'
+		},
+		fail: {
+			status: 404,
+			statusText: 'HTTP/1.1 404 Not Found',
+			contentType: 'text/plain',
+			responseText: ''
+		}
+	};
 });
