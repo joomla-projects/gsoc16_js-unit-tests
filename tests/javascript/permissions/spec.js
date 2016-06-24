@@ -11,10 +11,8 @@ define(['jquery', 'testsRoot/permissions/spec-setup', 'jasmineJquery'], function
 	describe('sendPermissions', function () {
 		beforeAll(function() {
 			jasmine.Ajax.install();
-
 			Joomla.JText._ = jasmine.createSpy('_');
 			Joomla.renderMessages = jasmine.createSpy('renderMessages');
-
 			sendPermissions(event);
 		});
 
@@ -35,9 +33,7 @@ define(['jquery', 'testsRoot/permissions/spec-setup', 'jasmineJquery'], function
 
 			beforeAll(function() {
 				sendPermissions(event);
-
 				request = jasmine.Ajax.requests.mostRecent();
-
 				request.respondWith(responses.success);
 			});
 
@@ -73,9 +69,7 @@ define(['jquery', 'testsRoot/permissions/spec-setup', 'jasmineJquery'], function
 		describe("on success with resp.data !== 'true' & resp.message !== 0", function() {
 			beforeAll(function() {
 				sendPermissions(event);
-
 				request = jasmine.Ajax.requests.mostRecent();
-
 				responses.success.responseText = '{"data": "false", "message": "1"}';
 				request.respondWith(responses.success);
 			});
@@ -96,9 +90,7 @@ define(['jquery', 'testsRoot/permissions/spec-setup', 'jasmineJquery'], function
 		describe("on failure", function() {
 			beforeAll(function() {
 				sendPermissions(event);
-
 				request = jasmine.Ajax.requests.mostRecent();
-
 				request.respondWith(responses.fail);
 			});
 
