@@ -117,7 +117,7 @@ define(['jquery', 'testsRoot/core/spec-setup', 'jasmineJquery'], function ($) {
         });
     });
 
-    describe('Joomla.renderMessages and Joomla.removeMessages', function () {
+    describe('Joomla.renderMessages', function () {
         var messages = {
             "message": ["Message one", "Message two"],
             "error": ["Error one", "Error two"]
@@ -140,11 +140,6 @@ define(['jquery', 'testsRoot/core/spec-setup', 'jasmineJquery'], function ($) {
             var messages = $('div.alert-error').children('div');
             expect(messages[0]).toContainText('Error two');
             expect(messages[1]).toContainText('Error one');
-        });
-
-        it('removeMessages should remove all content from system-message-container', function () {
-            Joomla.removeMessages();
-            expect($("#system-message-container")).toBeEmpty();
         });
     });
 
