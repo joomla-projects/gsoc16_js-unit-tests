@@ -117,21 +117,23 @@ define(['jquery', 'testsRoot/core/spec-setup', 'jasmineJquery'], function ($) {
         });
     });
 
-    describe('Joomla.renderMessages', function () {
+    describe('Joomla.renderMessages and Joomla.removeMessages', function () {
         var messages = {
             "message": ["Message one", "Message two"],
             "error": ["Error one", "Error two"]
         };
-        Joomla.JText.load({"message": "Message"});
 
-        Joomla.renderMessages(messages);
+        beforeAll(function () {
+            Joomla.JText.load({"message": "Message"});
+            Joomla.renderMessages(messages);
+        });
 
         it('renderMessages should render titles when translated strings are available', function () {
-            expect($('h4.alert-heading')[0]).toContainText('Message');
+            expect($('h4.alert-heading').first()).toContainText('Message');
         });
 
         it('renderMessages should render messages inside a div having class alert-message', function () {
-            var messages = $('div.alert-message').children('div');
+            var messages = $('div.alert-success').children('div');
             expect(messages[0]).toContainText('Message two');
             expect(messages[1]).toContainText('Message one');
         });
@@ -140,6 +142,11 @@ define(['jquery', 'testsRoot/core/spec-setup', 'jasmineJquery'], function ($) {
             var messages = $('div.alert-error').children('div');
             expect(messages[0]).toContainText('Error two');
             expect(messages[1]).toContainText('Error one');
+        });
+
+        it('removeMessages should remove all content from system-message-container', function () {
+            Joomla.removeMessages();
+            expect($("#system-message-container")).toBeEmpty();
         });
     });
 
