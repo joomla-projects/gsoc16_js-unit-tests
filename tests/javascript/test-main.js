@@ -25,8 +25,13 @@ require.config({
 	},
 
 	shim: {
-		jasmineJquery: ['jquery'],
+		'jasmineJquery': {
+			deps: ['jquery']
+		},
 		'libs/validate': {
+			deps: ['jquery']
+		},
+		'libs/sendtestmail': {
 			deps: ['jquery']
 		}
 	},
