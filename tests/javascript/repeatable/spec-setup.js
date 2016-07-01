@@ -10,21 +10,21 @@
 define(['jquery', 'text!testsRoot/repeatable/fixtures/fixture.html', 'libs/repeatable', 'jasmineJquery'], function ($, fixture) {
 	$('body').append(fixture);
 
-	weready = jasmine.createSpy('weready');
-	prepare_template = jasmine.createSpy('prepare-template');
-	prepare_modal = jasmine.createSpy('prepare-modal');
-	row_add = jasmine.createSpy('row-add');
-	row_remove = jasmine.createSpy('row-remove');
-	value_update = jasmine.createSpy('value-update');
+	spy_weready = jasmine.createSpy('weready');
+	spy_prepare_template = jasmine.createSpy('prepare-template');
+	spy_prepare_modal = jasmine.createSpy('prepare-modal');
+	spy_row_add = jasmine.createSpy('row-add');
+	spy_row_remove = jasmine.createSpy('row-remove');
+	spy_value_update = jasmine.createSpy('value-update');
 
-	var element = $('input.form-field-repeatable');
+	var $element = $('input.form-field-repeatable');
 
-	element.on('weready', weready)
-		.on('prepare-template', prepare_template)
-		.on('prepare-modal', prepare_modal)
-		.on('row-add', row_add)
-		.on('row-remove', row_remove)
-		.on('value-update', value_update);
+	$element.on('weready', spy_weready)
+		.on('prepare-template', spy_prepare_template)
+		.on('prepare-modal', spy_prepare_modal)
+		.on('row-add', spy_row_add)
+		.on('row-remove', spy_row_remove)
+		.on('value-update', spy_value_update);
 
-	element.JRepeatable();
+	$element.JRepeatable();
 });
