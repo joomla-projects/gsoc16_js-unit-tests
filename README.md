@@ -22,7 +22,7 @@ Prerequisites
 
 Install dependencies
 ---------------------
-1. Open a command line and navigate to the directory tests/javascript
+1. Open a command line and navigate to the directory `tests/javascript`
 2. Execute command  `npm install`
   * This will install all the dependencies to the tests/javascript/node_modules directory. If a node_modules folder does not exist, a folder will automatically be created by npm.
 3. Execute command `npm i -g karma karma-jasmine karma-jasmine-ajax karma-firefox-launcher karma-coverage karma-requirejs karma-verbose-reporter`
