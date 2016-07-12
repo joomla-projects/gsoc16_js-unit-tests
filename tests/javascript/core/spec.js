@@ -172,8 +172,8 @@ define(['jquery', 'testsRoot/core/spec-setup', 'jasmineJquery'], function ($) {
 
 	describe('Core Joomla.tableOrdering', function () {
 		beforeAll(function () {
-            submitformFn = Joomla.submitform;
-            Joomla.submitform = jasmine.createSpy('submitform');
+			submitformFn = Joomla.submitform;
+			Joomla.submitform = jasmine.createSpy('submitform');
 
 			this.form = document.getElementById('table-ordering-test-form');
 			this.form.filter_order = {};
@@ -182,9 +182,9 @@ define(['jquery', 'testsRoot/core/spec-setup', 'jasmineJquery'], function ($) {
 			Joomla.tableOrdering('order', 'dir', 'task', this.form);
 		});
 
-        afterAll(function() {
-            Joomla.submitform = submitformFn;
-        });
+		afterAll(function() {
+			Joomla.submitform = submitformFn;
+		});
 
 		it('should call Joomla.submitform with params task and form', function () {
 			expect(Joomla.submitform).toHaveBeenCalledWith('task', this.form);
