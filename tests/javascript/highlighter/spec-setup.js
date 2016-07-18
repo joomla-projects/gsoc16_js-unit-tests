@@ -9,17 +9,16 @@
 
 define(['jquery', 'text!testsRoot/highlighter/fixtures/fixture.html', 'libs/highlighter'], function ($, fixture) {
 	$('body').append(fixture);
-	$start = 'highlighter-start', $end = 'highlighter-end', $className = 'highlight', $tag = 'span'
-	var start = document.getElementById('" . $start . "');
-	var end = document.getElementById('" . $end . "');
-	if (!start || !end || !Joomla.Highlighter) {
-		return true;
-	}
+
+	var start = document.getElementById('highlighter-start');
+	var end = document.getElementById('highlighter-end');
+
 	highlighter = new Joomla.Highlighter({
 		startElement: start,
 		endElement: end,
-		className: '" . $className . "',
+		caseSensitive: false,
+		className: 'highlight',
 		onlyWords: false,
-		tag: '" . $tag . "'
-	}).highlight([\"" . implode('","', $terms) . "\"]);
+		tag: 'span'
+	});
 });
