@@ -48,6 +48,7 @@ services:
   - redis-server
 
 before_script:
+  - BASE=$PWD
   # Make sure all dev dependencies are installed
   - composer install
   # Set up databases for testing
@@ -80,6 +81,7 @@ before_script:
   #Make sure all node modules are installed
   - cd tests/javascript
   - npm install
+  - cd $BASE
 
 script:
   - libraries/vendor/bin/phpunit --configuration travisci-phpunit.xml
