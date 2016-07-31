@@ -15,7 +15,6 @@ sudo apt-get install -y --force-yes firefox fluxbox
 fluxbox &
 sleep 3 # give fluxbox some time to start
 
-#Make sure all node modules are installed
+# Install node modules for tests
 cd tests/javascript
 npm install
-cd $BASE
