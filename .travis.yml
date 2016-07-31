@@ -51,7 +51,7 @@ services:
 
 before_script:
   # JavaScript tests
-  - if [[ $RUN_JAVASCRIPT_TESTS == "yes" ]]; then bash tests/javascript/travis-tests.sh $PWD; exit 0; fi
+  - if [[ $RUN_JAVASCRIPT_TESTS == "yes" ]]; then export DISPLAY=:99.0; bash tests/javascript/travis-tests.sh $PWD; exit 0; fi
   # Make sure all dev dependencies are installed
   - composer install
   # Set up databases for testing
