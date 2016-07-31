@@ -12,6 +12,7 @@ matrix:
   fast_finish: true
   include:
     - node_js: 6.1
+      sudo: true
       env: RUN_JAVASCRIPT_TESTS="yes"
     - php: 5.3
       env: INSTALL_APC="yes"
