@@ -7,7 +7,7 @@
  * @version     1.0.0
  */
 
-define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sendtestmail', 'libs/core', 'jasmineJquery'], function ($, fixture) {
+define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sendtestmail'], function ($, fixture) {
     $('body').append(fixture);
     
 });
