@@ -76,4 +76,14 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 			expect($('#jEditMakeAbsolute')).toContainElement('.fr-ed-make-abs-false');
 		});
 	});
+
+	describe('Frontediting jmoddiv on mouseenter', function () {
+		beforeAll(function () {
+			$('.jmoddiv').first().mouseenter(); 
+		});
+
+		it('Should not detach any selected elements from jEditMakeAbsolute div', function () {
+			// expect($('#jEditMakeAbsolute')).toContainElement('.fr-ed-make-abs-false');
+		});
+	});
 });
