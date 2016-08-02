@@ -14,11 +14,11 @@ define(['jquery', 'testsRoot/highlighter/spec-setup', 'jasmineJquery'], function
 		});
 		
 		it('Should highlight sample text at depth 1', function () {
-			expect($('#text-depth-1')).toContainHtml('\<span rel="text" class="highlight">text</span>');
+			expect($('#text-depth-1')).toContainHtml('<span rel="text" class="highlight">text</span>');
 		});
 		
 		it('Should highlight sample text at depth 2', function () {
-			expect($('#text-depth-2')).toContainHtml('\<span rel="text" class="highlight">text</span>');
+			expect($('#text-depth-2')).toContainHtml('<span rel="text" class="highlight">text</span>');
 		});
 	});
 
@@ -29,14 +29,14 @@ define(['jquery', 'testsRoot/highlighter/spec-setup', 'jasmineJquery'], function
 		
 		it('Should highlight sample text at depth 1', function () {
 			var $element = $('#text-depth-1');
-			expect($element).toContainHtml('\<span rel="element" class="highlight">element</span>');
-			expect($element).toContainHtml('\<span rel="1" class="highlight">1</span>');
+			expect($element).toContainHtml('<span rel="element" class="highlight">element</span>');
+			expect($element).toContainHtml('<span rel="1" class="highlight">1</span>');
 		});
 		
 		it('Should highlight sample text at depth 2', function () {
 			var $element = $('#text-depth-2');
-			expect($element).toContainHtml('\<span rel="element" class="highlight">element</span>');
-			expect($element).toContainHtml('\<span rel="2" class="highlight">2</span>');
+			expect($element).toContainHtml('<span rel="element" class="highlight">element</span>');
+			expect($element).toContainHtml('<span rel="2" class="highlight">2</span>');
 		});
 	});
 	
@@ -46,11 +46,11 @@ define(['jquery', 'testsRoot/highlighter/spec-setup', 'jasmineJquery'], function
 		});
 		
 		it('Should highlight word \'sample\' in sample text at depth 1', function () {
-			expect($('#text-depth-1')).toContainHtml('\<span rel="Sample" class="highlight">Sample</span>');
+			expect($('#text-depth-1')).toContainHtml('<span rel="Sample" class="highlight">Sample</span>');
 		});
 		
 		it('Should highlight word \'sample\' in sample text at depth 2', function () {
-			expect($('#text-depth-2')).toContainHtml('\<span rel="Sample" class="highlight">Sample</span>');
+			expect($('#text-depth-2')).toContainHtml('<span rel="Sample" class="highlight">Sample</span>');
 		});
 	});
 
@@ -60,11 +60,11 @@ define(['jquery', 'testsRoot/highlighter/spec-setup', 'jasmineJquery'], function
 		});
 		
 		it('Should not highlight the word depth in sample text at depth 1', function () {
-			expect($('#text-depth-1')).not.toContainHtml('\<span rel="depth" class="highlight">depth</span>');
+			expect($('#text-depth-1')).not.toContainHtml('<span rel="depth" class="highlight">depth</span>');
 		});
 		
 		it('Should not highlight the word depth in sample text at depth 2', function () {
-			expect($('#text-depth-2')).not.toContainHtml('\<span rel="depth" class="highlight">depth</span>');
+			expect($('#text-depth-2')).not.toContainHtml('<span rel="depth" class="highlight">depth</span>');
 		});
 	});
 
@@ -74,7 +74,7 @@ define(['jquery', 'testsRoot/highlighter/spec-setup', 'jasmineJquery'], function
 		});
 		
 		it('Should not highlight the word textarea in the sample text inside textarea element', function () {
-			expect($('#txtarea-highlight')).not.toContainHtml('\<span rel="textarea" class="highlight">textarea</span>');
+			expect($('#txtarea-highlight')).not.toContainHtml('<span rel="textarea" class="highlight">textarea</span>');
 		});
 	});
 
@@ -84,7 +84,7 @@ define(['jquery', 'testsRoot/highlighter/spec-setup', 'jasmineJquery'], function
 		});
 		
 		it('Should not highlight the word span in the sample text inside span element', function () {
-			expect($('#span-highlight')).not.toContainHtml('\<span rel="span" class="highlight">span</span>');
+			expect($('#span-highlight')).not.toContainHtml('<span rel="span" class="highlight">span</span>');
 		});
 	});
 });
