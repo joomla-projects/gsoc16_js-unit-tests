@@ -41,7 +41,7 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
         describe("on success", function() {
             beforeAll(function() {
                 request = jasmine.Ajax.requests.mostRecent();
-                request.respondWith(responses.success);
+                request.respondWith(mailResponses.success);
             });
 
             it("should make a AJAX request of type POST", function() {
@@ -56,10 +56,9 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
                 expect(request.url).toBe('uri');
             });
 
-
-            // it("should call Joomla.renderMessages({})", function() {
-            //     expect(Joomla.renderMessages).toHaveBeenCalledWith({});
-            // });
+            it("should call Joomla.renderMessages({})", function() {
+                expect(Joomla.renderMessages).toHaveBeenCalledWith({});
+            });
 
             it("should call window.scrollTo(0, 0)", function() {
                 expect(window.scrollTo).toHaveBeenCalledWith(0, 0);

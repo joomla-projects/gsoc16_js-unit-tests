@@ -10,11 +10,11 @@
 define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sendtestmail', 'libs/core'], function ($, fixture) {
     $('body').append(fixture);
 
-    responses = {
+    mailResponses = {
         success: {
             status: 200,
             statusText: 'HTTP/1.1 200 OK',
-            responseText: '{"data": {"messages": {}}'
+            responseText: '{"messages": {}}'
         },
         fail: {
             status: 404,
