@@ -8,8 +8,6 @@
  */
 
 define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], function ($) {
-
-
     describe('Sendtestmail', function () {
         beforeAll(function() {
             jasmine.Ajax.install();
@@ -38,6 +36,34 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 
         it('Should call removeMessages()', function () {
             expect(Joomla.removeMessages).toHaveBeenCalled();
+        });
+
+        describe("on success", function() {
+            beforeAll(function() {
+                request = jasmine.Ajax.requests.mostRecent();
+                request.respondWith(responses.success);
+            });
+
+            it("should make a AJAX request of type POST", function() {
+                expect(request.method).toBe('POST');
+            });
+
+            it("should set data to the request", function() {
+                expect(request.data()).toEqual(email_data);
+            });
+
+            it("should set url value to 'uri'", function() {
+                expect(request.url).toBe('uri');
+            });
+
+
+            // it("should call Joomla.renderMessages({})", function() {
+            //     expect(Joomla.renderMessages).toHaveBeenCalledWith({});
+            // });
+
+            it("should call window.scrollTo(0, 0)", function() {
+                expect(window.scrollTo).toHaveBeenCalledWith(0, 0);
+            });
         });
     });
 });

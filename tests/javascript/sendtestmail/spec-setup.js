@@ -7,7 +7,34 @@
  * @version     1.0.0
  */
 
-define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sendtestmail'], function ($, fixture) {
+define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sendtestmail', 'libs/core'], function ($, fixture) {
     $('body').append(fixture);
+
+    responses = {
+        success: {
+            status: 200,
+            statusText: 'HTTP/1.1 200 OK',
+            responseText: '{"data": {"messages": {}}'
+        },
+        fail: {
+            status: 404,
+            statusText: 'HTTP/1.1 404 Not Found',
+            responseText: 'Error'
+        }
+    };
+
+    email_data = {
+        smtpauth  : ['smtpauth'],
+        smtpuser  : ['smtpuser'],
+        smtppass  : ['smtppass'],
+        smtphost  : ['smtphost'],
+        smtpsecure: ['smtpsecure'],
+        smtpport  : ['smtpport'],
+        mailfrom  : ['mailfrom'],
+        fromname  : ['fromname'],
+        mailer    : ['mailer'],
+        mailonline: ['mailonline']
+    };
     
+    $('#sendtestmail').click(sendTestMail);
 });
