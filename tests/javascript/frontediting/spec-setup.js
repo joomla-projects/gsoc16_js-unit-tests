@@ -9,5 +9,4 @@
 
 define(['jquery', 'text!testsRoot/frontediting/fixtures/fixture.html', 'libs/frontediting'], function ($, fixture) {
 	$('body').append(fixture);
-
 });
