@@ -21,18 +21,18 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 
 			expect($first).toHaveCss({
 				position: "absolute",
-				marginLeft: '0px', marginTop: '0px',
+				marginLeft: '0px',
+				marginTop: '0px',
 				top: (Math.round($first.offset().top * 1000) / 1000) + 'px',
 				left: (Math.round($first.offset().left * 1000) / 1000) + 'px'
-				// bottom: 'auto', right: 'auto'
 			});
 
 			expect($second).toHaveCss({
 				position: "absolute",
-				marginLeft: '0px', marginTop: '0px',
+				marginLeft: '0px',
+				marginTop: '0px',
 				top: (Math.round($second.offset().top * 1000) / 1000) + 'px',
 				left: (Math.round($second.offset().left * 1000) / 1000) + 'px'
-				// bottom: 'auto', right: 'auto'
 			});
 		});
 
@@ -60,7 +60,6 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 				marginLeft: '0px', marginTop: '0px',
 				top: (Math.round($first.position().top * 1000) / 1000) + 'px',
 				left: (Math.round($first.position().left * 1000) / 1000) + 'px'
-				// bottom: 'auto', right: 'auto'
 			});
 
 			expect($second).toHaveCss({
@@ -68,7 +67,6 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 				marginLeft: '0px', marginTop: '0px',
 				top: (Math.round($second.position().top * 1000) / 1000) + 'px',
 				left: (Math.round($second.position().left * 1000) / 1000) + 'px'
-				// bottom: 'auto', right: 'auto'
 			});
 		});
 
@@ -79,7 +77,7 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 
 	describe('Frontediting modules jmoddiv on mouseenter', function () {
 		beforeAll(function () {
-			$('#frontediting-module .jmoddiv').first().mouseenter();
+			$('#jmoddiv-module').mouseenter();
 			this.$editBtn = $('body>a.btn.jmodedit');
 		});
 
@@ -145,7 +143,7 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 	describe('Frontediting modules jmoddiv on mouseleave', function () {
 		beforeEach(function () {
 			jasmine.clock().install();
-			$('#frontediting-module .jmoddiv').first().mouseenter();
+			$('#jmoddiv-module').mouseenter();
 		});
 
 		afterEach(function () {
@@ -153,7 +151,7 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 		});
 
 		it('Should remove tooltip after a 500 millisecond delay', function () {
-			$('#frontediting-module .jmoddiv').first().mouseleave();
+			$('#jmoddiv-module').mouseleave();
 
 			expect($('body>a.btn.jmodedit')).toExist();
 
