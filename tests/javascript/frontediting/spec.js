@@ -22,17 +22,13 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 			expect($first).toHaveCss({
 				position: "absolute",
 				marginLeft: '0px',
-				marginTop: '0px',
-				top: (Math.round($first.offset().top * 1000) / 1000) + 'px',
-				left: (Math.round($first.offset().left * 1000) / 1000) + 'px'
+				marginTop: '0px'
 			});
 
 			expect($second).toHaveCss({
 				position: "absolute",
 				marginLeft: '0px',
-				marginTop: '0px',
-				top: (Math.round($second.offset().top * 1000) / 1000) + 'px',
-				left: (Math.round($second.offset().left * 1000) / 1000) + 'px'
+				marginTop: '0px'
 			});
 		});
 
@@ -57,16 +53,12 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 
 			expect($first).toHaveCss({
 				position: "absolute",
-				marginLeft: '0px', marginTop: '0px',
-				top: (Math.round($first.position().top * 1000) / 1000) + 'px',
-				left: (Math.round($first.position().left * 1000) / 1000) + 'px'
+				marginLeft: '0px', marginTop: '0px'
 			});
 
 			expect($second).toHaveCss({
 				position: "absolute",
-				marginLeft: '0px', marginTop: '0px',
-				top: (Math.round($second.position().top * 1000) / 1000) + 'px',
-				left: (Math.round($second.position().left * 1000) / 1000) + 'px'
+				marginLeft: '0px', marginTop: '0px'
 			});
 		});
 
