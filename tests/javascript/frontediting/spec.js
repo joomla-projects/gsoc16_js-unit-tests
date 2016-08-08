@@ -16,9 +16,20 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 
 		it('Should change style of all selected elements ', function () {
 			var $elements = $('.fr-ed-make-abs-true');
+			var $first = $elements.first();
+			var $second = $elements.last();
 
-			expect($elements.first()).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
-			expect($elements.last()).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
+			expect($first).toHaveCss({
+				position: "absolute",
+				marginLeft: '0px',
+				marginTop: '0px'
+			});
+
+			expect($second).toHaveCss({
+				position: "absolute",
+				marginLeft: '0px',
+				marginTop: '0px'
+			});
 		});
 
 		it('Should detach all selected elements from jEditMakeAbsolute div', function () {
@@ -37,9 +48,18 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 
 		it('Should change style of all selected elements ', function () {
 			var $elements = $('.fr-ed-make-abs-false');
+			var $first = $elements.first();
+			var $second = $elements.last();
 
-			expect($elements.first()).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
-			expect($elements.last()).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
+			expect($first).toHaveCss({
+				position: "absolute",
+				marginLeft: '0px', marginTop: '0px'
+			});
+
+			expect($second).toHaveCss({
+				position: "absolute",
+				marginLeft: '0px', marginTop: '0px'
+			});
 		});
 
 		it('Should not detach any selected elements from jEditMakeAbsolute div', function () {
