@@ -65,33 +65,6 @@ define(['jquery', 'testsRoot/combobox/spec-setup', 'jasmineJquery'], function ($
 		});
 	});
 
-	// describe('Combobox li a elements mouseenter handler', function () {
-	// 	beforeAll(function () {
-	// 		$('#comboboxjs li a').first().mouseenter();
-	// 		$container.find('li a').last().mouseover();
-	// 	});
-    //
-	// 	it('Should add class hover to first <a> element', function () {
-	// 		expect($('#comboboxjs li a').first()).toHaveClass('hover');
-	// 	});
-	// 	it('Should add class hover to last <a> element', function () {
-	// 		expect($container.find('li a').last()).toHaveClass('hover');
-	// 	});
-	// });
-    //
-	// describe('Combobox li a elements mouseleave handler', function () {
-	// 	beforeEach(function () {
-	// 		$container.find('li a').first().mouseout();
-	// 		$container.find('li a').last().mouseout();
-	// 	});
-	// 	it('Should remove class hover from first <a> element', function () {
-	// 		expect($container.find('li a').first()).not.toHaveClass('hover');
-	// 	});
-	// 	it('Should remove class hover from last <a> element', function () {
-	// 		expect($container.find('li a').last()).not.toHaveClass('hover');
-	// 	});
-	// });
-
 	describe('Combobox drop', function () {
 		beforeEach(function () {
 			$('#cbox-input').focus();
@@ -153,10 +126,6 @@ define(['jquery', 'testsRoot/combobox/spec-setup', 'jasmineJquery'], function ($
 		describe('When input an 1 in the input box', function () {
 			beforeAll(function () {
 				$('#cbox-input').val('1').trigger(jQuery.Event('keyup', {which: 49}));
-			});
-
-			afterAll(function () {
-				$('#cbox-input').val('').trigger(jQuery.Event('keyup', {which: 8}));
 			});
 
 			it('Should make link1 not visible', function () {
