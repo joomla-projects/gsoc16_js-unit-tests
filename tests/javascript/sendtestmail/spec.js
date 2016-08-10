@@ -74,8 +74,8 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 				expect(request.url).toBe('uri');
 			});
 
-			it("should call Joomla.renderMessages({})", function() {
-				expect(Joomla.renderMessages).toHaveBeenCalledWith({});
+			it("should call Joomla.renderMessages({'message': 'text'})", function() {
+				expect(Joomla.renderMessages).toHaveBeenCalledWith({"message": "text"});
 			});
 
 			it("should call window.scrollTo(0, 0)", function() {

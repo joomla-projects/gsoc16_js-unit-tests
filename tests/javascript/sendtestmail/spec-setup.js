@@ -14,7 +14,7 @@ define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sen
 		success: {
 			status: 200,
 			statusText: 'HTTP/1.1 200 OK',
-			responseText: '{"messages": {}}'
+			responseText: '{"messages": {"message": "text"}}'
 		},
 		successInvalid: {
 			status: 200,
