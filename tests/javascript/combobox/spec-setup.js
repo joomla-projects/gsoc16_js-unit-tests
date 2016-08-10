@@ -9,5 +9,6 @@
 
 define(['jquery', 'text!testsRoot/combobox/fixtures/fixture.html', 'libs/combobox'], function ($, fixture) {
 	$('body').append(fixture);
+
 	$('div.combobox').ComboTransform({updateList : true});
 });
