@@ -1,29 +1,29 @@
 <div id="subform-repeatablejs">
-	<div class="subform-repeatable"
+	<div id="repeatable-container" class="subform-repeatable"
 		 data-bt-add="a.group-add" data-bt-remove="a.group-remove" data-bt-move="a.group-move"
 		 data-repeatable-element="tr.subform-repeatable-group"
-		 data-rows-container="tbody" data-minimum="0" data-maximum="5">
+		 data-rows-container="tbody" data-minimum="1" data-maximum="2">
 		<table>
-			<thead>
-			<tr>
-				<th>Test label 1</th>
-				<th>Test lable 2</th>
-				<!--<th><a href="#" class="add">Add new after</a></th>-->
-			</tr>
-			</thead>
 			<tbody>
-				<tr class="subform-repeatable-group" data-base-name="dbname" data-group="dgroup">
+				<tr class="subform-repeatable-group" data-base-name="base-name" data-group="group">
 					<td>
-						Field 1
+						Data 1
 					</td>
 					<td>
-						Field 2
+						Data 2
+					</td>
+					<td>
+						<input type="checkbox" id="original-input-checkbox" name="input">
+						<label for="original-input-checkbox">Checkbox label</label>
+					</td>
+					<td>
+						<input type="radio" id="original-input-radio" name="input">
 					</td>
 					<td>
 						<div class="btn-group">
-							<a class="group-add" href="#">Add</span></a>
-							<a class="group-remove" href="#">Remove</a>
-							<a class="group-move" href="#">Move</a>
+							<a id="subform-original-add" class="group-add" href="#">Add</a>
+							<a id="subform-original-remove" class="group-remove" href="#">Remove</a>
+							<a id="subform-original-move" class="group-move" href="#">Move</a>
 						</div>
 					</td>
 				</tr>
@@ -31,22 +31,28 @@
 
 		</table>
 		<script type="text/subform-repeatable-template-section" class="subform-repeatable-template-section">
-			<tr class="subform-repeatable-group" data-base-name="dbname" data-group="dgroup">
+			<tr class="subform-repeatable-group" data-base-name="base-name" data-group="group">
 				<td>
-					Field 3
+					Data 3
 				</td>
 				<td>
-					Field 4
+					Data 4
+				</td>
+				<td>
+					<input type="checkbox" id="input_checkbox_group_test" name="input_checkbox[group][test]">
+					<label for="input_checkbox_group_test">Checkbox label</label>
+				</td>
+				<td>
+					<input type="radio" id="input_radio_group_test" name="input_radio[group][test]">
 				</td>
 				<td>
 					<div class="btn-group">
-						<a class="group-add" href="#">Add</span></a>
-						<a class="group-remove" href="#">Remove</a>
-						<a class="group-move" href="#">Move</a>
+						<a class="group-add generated" href="#">Add</a>
+						<a class="group-remove generated" href="#">Remove</a>
+						<a class="group-move generated" href="#">Move</a>
 					</div>
 				</td>
 			</tr>
 		</script>
 	</div>
-
 </div>

@@ -9,6 +9,16 @@
 
 define(['jquery', 'text!testsRoot/subform-repeatable/fixtures/fixture.html', 'libs/subform-repeatable'], function ($, fixture) {
 	$('body').append(fixture);
-	
-	console.log($.subformRepeatable);
+
+	spy_subform_ready = jasmine.createSpy('subform-ready');
+	spy_subform_row_add = jasmine.createSpy('subform-row-add');
+	spy_subform_row_remove = jasmine.createSpy('subform-row-remove');
+
+	var $element = $('#repeatable-container');
+
+	$element.on('subform-ready', spy_subform_ready)
+		.on('subform-row-add', spy_subform_row_add)
+		.on('subform-row-remove', spy_subform_row_remove);
+
+	$('div.subform-repeatable').subformRepeatable();
 });
