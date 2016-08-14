@@ -9,4 +9,6 @@
 
 define(['jquery', 'text!testsRoot/subform-repeatable/fixtures/fixture.html', 'libs/subform-repeatable'], function ($, fixture) {
 	$('body').append(fixture);
+	
+	console.log($.subformRepeatable);
 });

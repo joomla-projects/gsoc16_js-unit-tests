@@ -1,0 +1,52 @@
+<div id="subform-repeatablejs">
+	<div class="subform-repeatable"
+		 data-bt-add="a.group-add" data-bt-remove="a.group-remove" data-bt-move="a.group-move"
+		 data-repeatable-element="tr.subform-repeatable-group"
+		 data-rows-container="tbody" data-minimum="0" data-maximum="5">
+		<table>
+			<thead>
+			<tr>
+				<th>Test label 1</th>
+				<th>Test lable 2</th>
+				<!--<th><a href="#" class="add">Add new after</a></th>-->
+			</tr>
+			</thead>
+			<tbody>
+				<tr class="subform-repeatable-group" data-base-name="dbname" data-group="dgroup">
+					<td>
+						Field 1
+					</td>
+					<td>
+						Field 2
+					</td>
+					<td>
+						<div class="btn-group">
+							<a class="group-add" href="#">Add</span></a>
+							<a class="group-remove" href="#">Remove</a>
+							<a class="group-move" href="#">Move</a>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+
+		</table>
+		<script type="text/subform-repeatable-template-section" class="subform-repeatable-template-section">
+			<tr class="subform-repeatable-group" data-base-name="dbname" data-group="dgroup">
+				<td>
+					Field 3
+				</td>
+				<td>
+					Field 4
+				</td>
+				<td>
+					<div class="btn-group">
+						<a class="group-add" href="#">Add</span></a>
+						<a class="group-remove" href="#">Remove</a>
+						<a class="group-move" href="#">Move</a>
+					</div>
+				</td>
+			</tr>
+		</script>
+	</div>
+
+</div>
