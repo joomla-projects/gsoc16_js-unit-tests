@@ -17,10 +17,10 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 		it('Should change style of all selected elements ', function () {
 			var $elements = $('.fr-ed-make-abs-true');
 			var $first = $elements.first();
-			var $second = $elements.last();
+			var $last = $elements.last();
 
 			expect($first).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
-			expect($second).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
+			expect($last).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
 		});
 
 		it('Should detach all selected elements from jEditMakeAbsolute div', function () {
@@ -40,10 +40,10 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 		it('Should change style of all selected elements ', function () {
 			var $elements = $('.fr-ed-make-abs-false');
 			var $first = $elements.first();
-			var $second = $elements.last();
+			var $last = $elements.last();
 
 			expect($first).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
-			expect($second).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
+			expect($last).toHaveCss({position: "absolute", marginLeft: '0px', marginTop: '0px'});
 		});
 
 		it('Should not detach any selected elements from jEditMakeAbsolute div', function () {
@@ -97,6 +97,7 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 		describe('Edit icon on mouseleave', function () {
 			beforeEach(function () {
 				jasmine.clock().install();
+				this.TOOLTIP_REMOVE_DELAY = 1000;
 				this.$editBtn.mouseleave();
 			});
 
@@ -107,9 +108,7 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 			it('Should remove tooltip and button after a 500 millisecond delay', function () {
 				expect($('body>div.tooltip')).toExist();
 				expect($('body>a.btn.jmodedit')).toExist();
-
-				jasmine.clock().tick(501);
-
+				jasmine.clock().tick(this.TOOLTIP_REMOVE_DELAY);
 				expect($('body>div.tooltip')).not.toExist();
 				expect($('body>a.btn.jmodedit')).not.toExist();
 			});
@@ -119,6 +118,7 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 	describe('Frontediting modules jmoddiv on mouseleave', function () {
 		beforeEach(function () {
 			jasmine.clock().install();
+			this.TOOLTIP_REMOVE_DELAY = 1000;
 			$('#jmoddiv-module').mouseenter();
 		});
 
@@ -128,11 +128,8 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 
 		it('Should remove tooltip after a 500 millisecond delay', function () {
 			$('#jmoddiv-module').mouseleave();
-
 			expect($('body>a.btn.jmodedit')).toExist();
-
-			jasmine.clock().tick(501);
-
+			jasmine.clock().tick(this.TOOLTIP_REMOVE_DELAY);
 			expect($('body>a.btn.jmodedit')).not.toExist();
 		});
 	});
@@ -188,6 +185,7 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 	describe('Frontediting menu jmoddiv li on mouseleave', function () {
 		beforeEach(function () {
 			jasmine.clock().install();
+			this.TOOLTIP_REMOVE_DELAY = 2000;
 			$('#frontediting-menu-li').mouseenter();
 		});
 
@@ -195,13 +193,10 @@ define(['jquery', 'testsRoot/frontediting/spec-setup', 'jasmineJquery'], functio
 			jasmine.clock().uninstall();
 		});
 
-		it('Should remove tooltip after a 500 millisecond delay', function () {
+		it('Should remove tooltip after a 1500 millisecond delay', function () {
 			$('#frontediting-menu-li').mouseleave();
-
 			expect($('body>div.popover')).toExist();
-
-			jasmine.clock().tick(1501);
-
+			jasmine.clock().tick(this.TOOLTIP_REMOVE_DELAY);
 			expect($('body>div.popover')).not.toExist();
 		});
 	});
