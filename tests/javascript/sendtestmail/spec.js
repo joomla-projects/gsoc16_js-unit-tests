@@ -41,7 +41,7 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 		describe("on success with typeof response.messages !== 'object'", function() {
 			beforeAll(function() {
 				request = jasmine.Ajax.requests.mostRecent();
-				request.respondWith(mailResponses.successInvalid);
+				request.respondWith(dummyContent.mailResponses.successInvalid);
 			});
 
 			it("should call Joomla.renderMessages({})", function() {
@@ -58,7 +58,7 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 				$('#sendtestmail').click();
 
 				request = jasmine.Ajax.requests.mostRecent();
-				request.respondWith(mailResponses.success);
+				request.respondWith(dummyContent.mailResponses.success);
 			});
 
 			it("should make a AJAX request of type POST", function() {
@@ -67,7 +67,7 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 			});
 
 			it("should set data to the request", function() {
-				expect(request.data()).toEqual(email_data);
+				expect(request.data()).toEqual(dummyContent.emailData);
 			});
 
 			it("should set url value to 'uri'", function() {
@@ -88,7 +88,7 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 				$('#sendtestmail').click();
 
 				request = jasmine.Ajax.requests.mostRecent();
-				request.respondWith(mailResponses.fail);
+				request.respondWith(dummyContent.mailResponses.fail);
 			});
 
 			it("should call Joomla.ajaxErrorsMessages(jqXHR, 'error', 'HTTP/1.1 404 Not Found')", function() {

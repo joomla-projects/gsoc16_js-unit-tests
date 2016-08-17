@@ -10,36 +10,38 @@
 define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sendtestmail', 'libs/core'], function ($, fixture) {
 	$('body').append(fixture);
 
-	mailResponses = {
-		success: {
-			status: 200,
-			statusText: 'HTTP/1.1 200 OK',
-			responseText: '{"messages": {"message": "text"}}'
+	dummyContent = {
+		mailResponses: {
+			success: {
+				status: 200,
+				statusText: 'HTTP/1.1 200 OK',
+				responseText: '{"messages": {"message": "text"}}'
+			},
+			successInvalid: {
+				status: 200,
+				statusText: 'HTTP/1.1 200 OK',
+				responseText: '{"messages": "text"}'
+			},
+			fail: {
+				status: 404,
+				statusText: 'HTTP/1.1 404 Not Found',
+				responseText: 'Error'
+			}
 		},
-		successInvalid: {
-			status: 200,
-			statusText: 'HTTP/1.1 200 OK',
-			responseText: '{"messages": "text"}'
-		},
-		fail: {
-			status: 404,
-			statusText: 'HTTP/1.1 404 Not Found',
-			responseText: 'Error'
+
+		emailData: {
+			smtpauth  : ['smtpauth'],
+			smtpuser  : ['smtpuser'],
+			smtppass  : ['smtppass'],
+			smtphost  : ['smtphost'],
+			smtpsecure: ['smtpsecure'],
+			smtpport  : ['smtpport'],
+			mailfrom  : ['mailfrom'],
+			fromname  : ['fromname'],
+			mailer    : ['mailer'],
+			mailonline: ['mailonline']
 		}
 	};
-
-	email_data = {
-		smtpauth  : ['smtpauth'],
-		smtpuser  : ['smtpuser'],
-		smtppass  : ['smtppass'],
-		smtphost  : ['smtphost'],
-		smtpsecure: ['smtpsecure'],
-		smtpport  : ['smtpport'],
-		mailfrom  : ['mailfrom'],
-		fromname  : ['fromname'],
-		mailer    : ['mailer'],
-		mailonline: ['mailonline']
-	};
-
+	
 	$('#sendtestmail').click(sendTestMail);
 });
