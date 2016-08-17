@@ -40,7 +40,7 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 
 		describe("on success with typeof response.messages !== 'object'", function() {
 			beforeAll(function() {
-				request = jasmine.Ajax.requests.mostRecent();
+				var request = jasmine.Ajax.requests.mostRecent();
 				request.respondWith(dummyContent.mailResponses.successInvalid);
 			});
 
@@ -57,21 +57,20 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 			beforeAll(function() {
 				$('#sendtestmail').click();
 
-				request = jasmine.Ajax.requests.mostRecent();
-				request.respondWith(dummyContent.mailResponses.success);
+				this.request = jasmine.Ajax.requests.mostRecent();
+				this.request.respondWith(dummyContent.mailResponses.success);
 			});
 
 			it("should make a AJAX request of type POST", function() {
-				console.log(request);
-				expect(request.method).toBe('POST');
+				expect(this.request.method).toBe('POST');
 			});
 
 			it("should set data to the request", function() {
-				expect(request.data()).toEqual(dummyContent.emailData);
+				expect(this.request.data()).toEqual(dummyContent.emailData);
 			});
 
 			it("should set url value to 'uri'", function() {
-				expect(request.url).toBe('uri');
+				expect(this.request.url).toBe('uri');
 			});
 
 			it("should call Joomla.renderMessages({'message': 'text'})", function() {
@@ -87,7 +86,7 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 			beforeAll(function() {
 				$('#sendtestmail').click();
 
-				request = jasmine.Ajax.requests.mostRecent();
+				var request = jasmine.Ajax.requests.mostRecent();
 				request.respondWith(dummyContent.mailResponses.fail);
 			});
 
