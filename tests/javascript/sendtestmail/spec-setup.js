@@ -28,7 +28,6 @@ define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sen
 				responseText: 'Error'
 			}
 		},
-
 		emailData: {
 			smtpauth  : ['smtpauth'],
 			smtpuser  : ['smtpuser'],
@@ -42,6 +41,6 @@ define(['jquery', 'text!testsRoot/sendtestmail/fixtures/fixture.html', 'libs/sen
 			mailonline: ['mailonline']
 		}
 	};
-	
+
 	$('#sendtestmail').click(sendTestMail);
 });
