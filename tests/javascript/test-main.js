@@ -35,6 +35,9 @@ require.config({
 		'libs/validate': {
 			deps: ['jquery']
 		},
+		'libs/sendtestmail': {
+			deps: ['jquery']
+		},
 		'libs/subform-repeatable': {
 			deps: ['jquery', 'jui']
 		}
