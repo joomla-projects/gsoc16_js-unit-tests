@@ -11,7 +11,6 @@ define(['jquery', 'testsRoot/sendtestmail/spec-setup', 'jasmineJquery'], functio
 	describe('Sendtestmail', function () {
 		beforeAll(function() {
 			jasmine.Ajax.install();
-
 			renderFn = Joomla.renderMessages;
 			removeFn = Joomla.removeMessages;
 			ajxerrFn = Joomla.ajaxErrorsMessages;
