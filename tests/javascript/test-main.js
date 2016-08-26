@@ -35,6 +35,9 @@ require.config({
 		'libs/validate': {
 			deps: ['jquery']
 		},
+		'libs/combobox': {
+			deps: ['jquery']
+		},
 		'libs/sendtestmail': {
 			deps: ['jquery']
 		},
