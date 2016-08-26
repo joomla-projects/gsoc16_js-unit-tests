@@ -195,49 +195,6 @@ define(['jquery', 'testsRoot/combobox/spec-setup', 'jasmineJquery'], function ($
 				expect($('#cbox-link2')).toBeVisible();
 			});
 		});
-
-		describe('When input text "link" in the input box and pressed enter', function () {
-			beforeAll(function () {
-				var $input = $('#cbox-input');
-
-				$input.val('l').trigger(jQuery.Event('keyup', {which: 76}));
-				$input.val('li').trigger(jQuery.Event('keyup', {which: 73}));
-				$input.val('lin').trigger(jQuery.Event('keyup', {which: 78}));
-				$input.val('link').trigger(jQuery.Event('keyup', {which: 75}));
-
-				//Press Down arrow key to trigger highlight function so that $currHovered is set
-				$input.trigger(jQuery.Event('keyup', {which: 40}));
-
-				//Press Enter
-				$input.trigger(jQuery.Event('keyup', {which: 13}));
-			});
-
-			it('Should make link2 the value of input field', function () {
-				expect($('#cbox-input').val()).toEqual('link2');
-			});
-		});
-
-		describe('When input text "link" in the input box and down arrow key pressed', function () {
-			beforeAll(function () {
-				var $input = $('#cbox-input');
-
-				$input.val('l').trigger(jQuery.Event('keyup', {which: 76}));
-				$input.val('li').trigger(jQuery.Event('keyup', {which: 73}));
-				$input.val('lin').trigger(jQuery.Event('keyup', {which: 78}));
-				$input.val('link').trigger(jQuery.Event('keyup', {which: 75}));
-
-				//Press Down arrow key
-				$input.trigger(jQuery.Event('keyup', {which: 40}));
-			});
-
-			it('Should add class "hover" to link2', function () {
-				expect($('#cbox-link2')).toHaveClass('hover');
-			});
-
-			it('Should remove class "hover" from link1', function () {
-				expect($('#cbox-link1')).not.toHaveClass('hover');
-			});
-		});
 	});
 
 	describe('Combobox focusCombo', function () {
