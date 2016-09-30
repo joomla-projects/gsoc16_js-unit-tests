@@ -43,8 +43,7 @@
 		}
 	});
 
-	$(document).ready(function () {
-
+	Joomla.fediting = function () {
 		// Tooltip maximal dimensions for intelligent placement:
 		var actualWidth = 200;
 		var actualHeight = 100;
@@ -110,7 +109,7 @@
 				// Get module editing URL and tooltip for module edit:
 				var moduleEditUrl = $(this).data('jmodediturl');
 				var moduleTip = $(this).data('jmodtip');
-                var moduleTarget = $(this).data('target');
+				var moduleTarget = $(this).data('target');
 
 				// Stop timeout on previous tooltip and remove it:
 				$('body>.btn.jmodedit').clearQueue().tooltip('destroy').remove();
@@ -179,22 +178,26 @@
 
 				$('body>div.popover')
 					.on({
-					mouseenter: function() {
-						if (activePopover) {
-							$(activePopover).clearQueue();
+						mouseenter: function() {
+							if (activePopover) {
+								$(activePopover).clearQueue();
+							}
+						},
+						mouseleave: function() {
+							if (activePopover) {
+								$(activePopover).popover('hide');
+							}
 						}
-					},
-					mouseleave: function() {
-						if (activePopover) {
-							$(activePopover).popover('hide');
-						}
-					}
-				})
-				.find('a.jfedit-menu').tooltip({"container": false, html: true, placement: 'bottom'});
+					})
+					.find('a.jfedit-menu').tooltip({"container": false, html: true, placement: 'bottom'});
 			},
 			mouseleave: function() {
 				$(this).delay(1500).queue(function(next) { $(this).popover('hide'); next() });
 			}
 		});
+	};
+
+	$(document).ready(function () {
+		Joomla.fediting();
 	});
 })(jQuery);

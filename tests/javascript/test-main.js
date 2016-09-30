@@ -35,7 +35,7 @@ require.config({
 			deps: ['jquery']
 		},
 		'libs/frontediting': {
-			deps: ['jquery']
+			deps: ['jquery', 'libs/core']
 		}
 	},
 
